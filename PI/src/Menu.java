@@ -28,7 +28,18 @@ public class Menu {
         System.out.println("+--------------------------------+");
     }
 
-    public static void intrucoes(){
-        
+    public static void instrucoes(){
+        System.out.println("+-------------------------------------------------------------------------------------+");
+        System.out.println("|                                       Introdução                                    |");
+        System.out.println("+-------------------------------------------------------------------------------------+");
+        System.out.println("| Ola!, estas serão as instruçoes para iniciar o quiz sobre futebol                   |");
+        System.out.println("| O quiz consiste em um teste de conhecimento sobre o futebol em geral                |");
+        System.out.println("| Cada pergunta tera 3 escolhas e somente uma resposta correta                        |");
+        System.out.println("| Cada resposta correta voce ganha 1 ponto.                                           |");
+        System.out.println("| Voce tera que digitar no seu teclado a letra referente a resposta correta A, B ou C |");
+        System.out.println("| Ao final do Quiz os seus pontos serão somados exibidos na tela                      |");
+        System.out.println("+-------------------------------------------------------------------------------------+");
+
     }
+
 }

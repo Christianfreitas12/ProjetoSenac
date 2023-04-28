@@ -14,7 +14,7 @@ public class App {
 
             switch (numOpcao) {
                 case 1:
-                    menu.intrucoes();
+                    menu.instrucoes();
                     break;
                 case 2:
                     game.inicioGame();
