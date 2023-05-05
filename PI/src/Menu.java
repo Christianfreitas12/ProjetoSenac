@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -42,4 +43,51 @@ public class Menu {
 
     }
 
+    public static void tecleParaContinuar() {
+		System.out.println("===============================================");
+		System.out.println("Tecle algo e precione o enter para continuar...");
+		System.out.println("===============================================");
+		try {
+			System.in.read();
+			read.nextLine();
+            limparConsole();
+		} catch (Exception e) {
+		}
+	}
+
+    public static void swCase() throws InterruptedException, IOException{
+        int numOpcao;
+        Game game = new Game();
+        do {
+            finalMenu();
+            numOpcao = read.nextInt();
+            limparConsole();
+
+            switch (numOpcao) {
+                case 1:
+                    instrucoes();
+                    tecleParaContinuar(); 
+                    break;
+                case 2:
+                    game.inicioGame();
+                    break;
+                case 3:
+                    creditos();
+                    tecleParaContinuar(); 
+                    break;
+                case 4:
+                    System.out.println("VOCÊ SAIU!!");
+                    break;
+                default:
+                    System.out.println("Opção invalida!");             
+            }
+        } while (numOpcao != 4);
+    }
+
+    public static void limparConsole() throws InterruptedException, IOException{
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
+    }
 }
