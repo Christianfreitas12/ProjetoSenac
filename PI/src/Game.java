@@ -1,4 +1,8 @@
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -17,180 +21,328 @@ public class Game {
         String resposta;
         Menu menu = new Menu();
 
-        // Pergunta 1
-        System.out.println("1. Qual é o nome do jogador que venceu a Bola de Ouro da FIFA em 2021?");
+        // armazenando questões
+        Collection<String> questoes = new ArrayList<>();
+        questoes.add("1. Qual é o nome do jogador que venceu a Bola de Ouro da FIFA em 2021?");
+        questoes.add("2. Qual país venceu a Copa do Mundo da FIFA de 2018?");
+        questoes.add("3. Qual time venceu a Liga dos Campeões da UEFA em 2020?");
+        questoes.add("4. Qual jogador tem o recorde de gols marcados em uma única temporada da Liga dos Campeões da UEFA?");
+        questoes.add("5. Qual é o apelido da seleção brasileira de futebol?");
+        questoes.add("6. Em que ano o Brasil venceu a sua primeira Copa do Mundo?");
+        questoes.add("7. Quém é o maior artilheiro de todos os tempos do Brasil?");
+        questoes.add("8. Quantos titulos mundiais tem o Palmeiras?");
+
+        // aramazenando alternativas questão 1
+        Collection<String> alternativasquest1 = new ArrayList<>();
+        alternativasquest1.add("Lionel Messi");
+        alternativasquest1.add("Cristiano Ronaldo");
+        alternativasquest1.add("Robert Lewandowski");
+        String alternativaCorreta = "Lionel Messi";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest1);
+
+        // mostrando questão 1
+        System.out.println(((List<String>) questoes).get(0));
         timer();
-        System.out.println("a) Lionel Messi");
-        timer1();
-        System.out.println("b) Cristiano Ronaldo");
-        timer1();
-        System.out.println("c) Robert Lewandowski");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest1).get(i));
+            timer1();
+        }
+        // pegando respostas questão 1
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("c")) {
-            pontuacao++;
+        
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest1).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta)) {
+                    pontuacao++;
+                }
+                break;
         }
 
         // Pergunta 2
-        System.out.println("2. Qual país venceu a Copa do Mundo da FIFA de 2018?");
+        // aramazenando alternativas questão 2
+        Collection<String> alternativasquest2 = new ArrayList<>();
+        alternativasquest2.add("Espanha");
+        alternativasquest2.add("França");
+        alternativasquest2.add("Brasil");
+        String alternativaCorreta2 = "França";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest2);
+
+        // mostrando questão 2
+        System.out.println(((List<String>) questoes).get(1));
         timer();
-        System.out.println("a) Espanha");
-        timer1();
-        System.out.println("b) França");
-        timer1();
-        System.out.println("c) Brasil");
+        
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest2).get(i));
+            timer1();
+        }
+        // pegando respostas questão
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("b")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest2).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta2)) {
+                    pontuacao++;
+                }
+                break;
         }
 
         // Pergunta 3
-        System.out.println("3. Qual time venceu a Liga dos Campeões da UEFA em 2020?");
+        Collection<String> alternativasquest3 = new ArrayList<>();
+        alternativasquest3.add("Bayern de Munique");
+        alternativasquest3.add("Paris Saint-Germain");
+        alternativasquest3.add("Manchester City");
+        String alternativaCorreta3 = "Bayern de Munique";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest3);
+
+        // mostrando questão 3
+        System.out.println(((List<String>) questoes).get(2));
         timer();
-        System.out.println("a) Bayern de Munique");
-        timer1();
-        System.out.println("b) Paris Saint-Germain");
-        timer1();
-        System.out.println("c) Manchester City");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest3).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("a")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest3).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta3)) {
+                    pontuacao++;
+                }
+                break;
         }
 
         // Pergunta 4
-        System.out.println(
-         "4. Qual jogador tem o recorde de gols marcados em uma única temporada da Liga dos Campeões da UEFA?");
+        Collection<String> alternativasquest4 = new ArrayList<>();
+        alternativasquest4.add("Lionel Messi");
+        alternativasquest4.add("Cristiano Ronaldo");
+        alternativasquest4.add("Neymar");
+        String alternativaCorreta4 = "Cristiano Ronaldo";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest4);
+
+        // mostrando questão 4
+        System.out.println(((List<String>) questoes).get(3));
         timer();
-        System.out.println("a) Lionel Messi");
-        timer1();
-        System.out.println("b) Cristiano Ronaldo");
-        timer1();
-        System.out.println("c) Neymar");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest4).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("b")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest4).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta4)) {
+                    pontuacao++;
+                }
+                break;
         }
 
         // Pergunta 5
-        System.out.println("5. Qual é o apelido da seleção brasileira de futebol?");
+        Collection<String> alternativasquest5 = new ArrayList<>();
+        alternativasquest5.add("Amarelinha");
+        alternativasquest5.add("Canarinho");
+        alternativasquest5.add("Verde-Amarela");
+        String alternativaCorreta5 = "Canarinho";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest5);
+
+        // mostrando questão 5
+        System.out.println(((List<String>) questoes).get(4));
         timer();
-        System.out.println("a) Amarelinha");
-        timer1();
-        System.out.println("b) Canarinho");
-        timer1();
-        System.out.println("c) Verde-Amarela");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest5).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("b")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest5).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta5)) {
+                    pontuacao++;
+                }
+                break;
         }
 
-        System.out.println("6. Em que ano o Brasil venceu a sua primeira Copa do Mundo? ");
+        // Pergunta 6
+        Collection<String> alternativasquest6 = new ArrayList<>();
+        alternativasquest6.add("1958");
+        alternativasquest6.add("1962");
+        alternativasquest6.add("1951");
+        String alternativaCorreta6 = "1958";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest6);
+
+        // mostrando questão 6
+        System.out.println(((List<String>) questoes).get(5));
         timer();
-        System.out.println("a) 1958");
-        timer1();
-        System.out.println("b) 1962");
-        timer1();
-        System.out.println("c) 1951");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest6).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("a")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+            
+
+                String valorResposta = ((List<String>) alternativasquest6).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta6)) {
+                    pontuacao++;
+                }
+                break;
         }
 
-        System.out.println("7. Quém é o maior artilheiro de todos os tempos do Brasil? ");
+        // pergunta 7
+        Collection<String> alternativasquest7 = new ArrayList<>();
+        alternativasquest7.add("Pelé");
+        alternativasquest7.add("Ronaldo Fenômeno");
+        alternativasquest7.add("Neymar Júnior");
+        String alternativaCorreta7 = "Pelé";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest7);
+
+        // mostrando questão 7
+        System.out.println(((List<String>) questoes).get(6));
         timer();
-        System.out.println("a) Ronaldo Fenomeno");
-        timer1();
-        System.out.println("b) Pele");
-        timer1();
-        System.out.println("c) Neymar");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest7).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("b")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+    
+                String valorResposta = ((List<String>) alternativasquest7).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta7)) {
+                    pontuacao++;
+                }
+                break;
         }
-        System.out.println("8. Quem foi o primeiro campeão Brasileiro? ");
+
+        // pergunta 8
+        Collection<String> alternativasquest8 = new ArrayList<>();
+        alternativasquest8.add("0");
+        alternativasquest8.add("1");
+        alternativasquest8.add("2");
+        String alternativaCorreta8 = "0";
+
+        // embaralhando a ordem das alternativas
+        Collections.shuffle((List<String>) alternativasquest8);
+
+        // mostrando questão 8
+        System.out.println(((List<String>) questoes).get(7));
         timer();
-        System.out.println("a) Santos");
-        timer1();
-        System.out.println("b) Bahia");
-        timer1();
-        System.out.println("c) Atletico Mineiro");
+
+        // mostrando as respostas
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i + ") " + ((List<String>) alternativasquest8).get(i));
+            timer1();
+        }
+        // pegando respostas questão 
         resposta = input.nextLine();
         menu.limparConsole();
-        if (resposta.equals("c")) {
-            pontuacao++;
+
+        // verificando o valor digitado
+        switch (resposta) {
+            case "0":
+            case "1":
+            case "2":
+                int respostaInt = Integer.parseInt(resposta);
+
+                String valorResposta = ((List<String>) alternativasquest8).get(respostaInt);
+                if (valorResposta.equals(alternativaCorreta8)) {
+                    pontuacao++;
+                }
+                break;
         }
-        System.out.println("9. Quantos titulos mundiais tem o Palmeiras? ");
-        System.out.println("a) 0");
-        System.out.println("b) 1");
-        System.out.println("c) 2");
-        resposta = input.nextLine();
-        if (resposta.equals("0")) {
-            pontuacao++;
-        }
-        System.out.println("10. Em que ano Pep Guardiola estreou como treinador do FC Barcelona? ");
-        System.out.println("a) 2009");
-        System.out.println("b) 2008");
-        System.out.println("c) 2010");
-        resposta = input.nextLine();
-        if (resposta.equals("b")) {
-            pontuacao++;
-        }
-        System.out.println("11. Quantas Copas do Mundo a Itália ganhou? ");
-        System.out.println("a) 4 Copas do mundo");
-        System.out.println("b) 3 Copas do mundo");
-        System.out.println("c) 2 Copas do mundo");
-        resposta = input.nextLine();
-        if (resposta.equals("a")) {
-            pontuacao++;
-        }
-        System.out.println("12. Qual estadio tem a maior capacidade de publico no Brasil? ");
-        System.out.println("a) Mané Garincha");
-        System.out.println("b) Arena Castelão");
-        System.out.println("c) Maracanã");
-        resposta = input.nextLine();
-        if (resposta.equals("c")) {
-            pontuacao++;
-        }
-        System.out.println("13. Qual é o time com mais champions league? ");
-        System.out.println("a) Milan");
-        System.out.println("b) Real Madrid");
-        System.out.println("c) Leverpool");
-        resposta = input.nextLine();
-        if (resposta.equals("b")) {
-            pontuacao++;
-        }
-        System.out.println("14. Qual jogador foi artilheiro da champions league 2021\22? ");
-        System.out.println("a) Karim Benzema");
-        System.out.println("b) Lewandowski");
-        System.out.println("c) Mohamed Salah");
-        resposta = input.nextLine();
-        if (resposta.equals("a")) {
-            pontuacao++;
-        }
-        System.out.println("15. Onde o futebol foi criado ? ");
-        System.out.println("a) Brasil");
-        System.out.println("b) China");
-        System.out.println("c) Inglaterra");
-        resposta = input.nextLine();
-        if (resposta.equals("a")) {
-            pontuacao++;
-        }
+
+        menu.limparConsole();
+
         // Exibe a pontuação final
-        System.out.println("Sua pontuação final é " + pontuacao + " de 15.");
+        System.out.printf("Sua pontuação final é %d de 8. \n", pontuacao);
 
         // Classificação do jogador
-        if (pontuacao == 5) {
+        if (pontuacao > 6) {
             System.out.println("Excelente! Você é um verdadeiro fã de futebol.");
-        } else if (pontuacao >= 3) {
+        } else if (pontuacao > 4) {
             System.out.println("Bom trabalho! Você sabe muito sobre futebol.");
         } else {
             System.out.println("Que pena! Você precisa estudar mais sobre futebol.");
         }
+        menu.tecleParaContinuar();
     }
 }

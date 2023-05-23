@@ -37,7 +37,7 @@ public class Menu {
         System.out.println("| O quiz consiste em um teste de conhecimento sobre o futebol em geral                |");
         System.out.println("| Cada pergunta tera 3 escolhas e somente uma resposta correta                        |");
         System.out.println("| Cada resposta correta voce ganha 1 ponto.                                           |");
-        System.out.println("| Voce tera que digitar no seu teclado a letra referente a resposta correta A, B ou C |");
+        System.out.println("| Voce tera que digitar no seu teclado o número referente a resposta correta 0, 1 ou 2 |");
         System.out.println("| Ao final do Quiz os seus pontos serão somados exibidos na tela                      |");
         System.out.println("+-------------------------------------------------------------------------------------+");
 
@@ -45,7 +45,7 @@ public class Menu {
 
     public static void tecleParaContinuar() {
 		System.out.println("===============================================");
-		System.out.println("Tecle algo e precione o enter para continuar...");
+		System.out.println("Tecle enter para continuar...");
 		System.out.println("===============================================");
 		try {
 			System.in.read();
